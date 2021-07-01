@@ -33,118 +33,55 @@ def circdef():
 
 
 def test_x_gate(circdef):
-    circdef.x_gate(0)
-    circdef.x_gate(1)
-    circdef.x_gate(2)
-    circdef.x_gate(3)
-    circdef.x_gate(4)
-    assert statevector_qiskit(circdef).tolist() == [0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 1+0j]
-
-    assert statevector_cirq(circdef).tolist() == [0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 1+0j]
+    assert isinstance(circdef.x_gate(0), QCircuit)
+    assert isinstance(circdef.x_gate(1), QCircuit)
+    assert isinstance(circdef.x_gate(2), QCircuit)
+    assert isinstance(circdef.x_gate(3), QCircuit)
+    assert isinstance(circdef.x_gate(4), QCircuit)
 
 
 def test_y_gate(circdef):
-    circdef.y_gate(0)
-    circdef.y_gate(1)
-    circdef.y_gate(2)
-    circdef.y_gate(3)
-    circdef.y_gate(4)
-    assert statevector_qiskit(circdef).tolist() == [0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+1j]
-
-    assert statevector_cirq(circdef).tolist() == [0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+1j]
+    assert isinstance(circdef.y_gate(0), QCircuit)
+    assert isinstance(circdef.y_gate(1), QCircuit)
+    assert isinstance(circdef.y_gate(2), QCircuit)
+    assert isinstance(circdef.y_gate(3), QCircuit)
+    assert isinstance(circdef.y_gate(4), QCircuit)
 
 
 def test_z_gate(circdef):
-    circdef.z_gate(0)
-    circdef.z_gate(1)
-    circdef.z_gate(2)
-    circdef.z_gate(3)
-    circdef.z_gate(4)
-    assert statevector_qiskit(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
-
-    assert statevector_cirq(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
+    assert isinstance(circdef.z_gate(0), QCircuit)
+    assert isinstance(circdef.z_gate(1), QCircuit)
+    assert isinstance(circdef.z_gate(2), QCircuit)
+    assert isinstance(circdef.z_gate(3), QCircuit)
+    assert isinstance(circdef.z_gate(4), QCircuit)
 
 
 def test_h_gate(circdef):
-    circdef.h_gate(0)
-    circdef.h_gate(1)
-    circdef.h_gate(2)
-    circdef.h_gate(3)
-    circdef.h_gate(4)
-    assert np.round(statevector_qiskit(circdef), 3).tolist() == [0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j]
-
-    assert np.round(statevector_cirq(circdef).astype(np.float64), 3).tolist() == [0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                                  0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                                  0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j,
-                                                                                  0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j, 0.177+0j]
+    assert isinstance(circdef.h_gate(0), QCircuit)
+    assert isinstance(circdef.h_gate(1), QCircuit)
+    assert isinstance(circdef.h_gate(2), QCircuit)
+    assert isinstance(circdef.h_gate(3), QCircuit)
+    assert isinstance(circdef.h_gate(4), QCircuit)
 
 
 def test_cx_gate(circdef):
-    circdef.cx_gate(0, 1)
-    circdef.cx_gate(1, 2)
-    circdef.cx_gate(2, 3)
-    circdef.cx_gate(3, 4)
-    assert statevector_qiskit(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
-
-    assert statevector_cirq(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
+    assert isinstance(circdef.cx_gate(0, 1), QCircuit)
+    assert isinstance(circdef.cx_gate(1, 2), QCircuit)
+    assert isinstance(circdef.cx_gate(2, 3), QCircuit)
+    assert isinstance(circdef.cx_gate(3, 4), QCircuit)
 
 
 def test_cz_gate(circdef):
-    circdef.cz_gate(0, 1)
-    circdef.cz_gate(1, 2)
-    circdef.cz_gate(2, 3)
-    circdef.cz_gate(3, 4)
-    assert statevector_qiskit(circdef).tolist() == [1.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.-0.j,
-                                                    0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, -0.+0.j, -0.+0.j, 0.-0.j, 0.+0.j,
-                                                    0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.-0.j,
-                                                    -0.+0.j, -0.+0.j, -0.+0.j, 0.-0.j, 0.-0.j, 0.-0.j, 0.+0.j, -0.+0.j]
-
-    assert statevector_cirq(circdef).tolist() == [1.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.-0.j,
-                                                  0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, -0.+0.j, -0.+0.j, 0.-0.j, 0.+0.j,
-                                                  0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.+0.j, 0.+0.j, -0.+0.j, 0.-0.j,
-                                                  -0.+0.j, -0.+0.j, -0.+0.j, 0.-0.j, 0.-0.j, 0.-0.j, 0.+0.j, -0.+0.j]
+    assert isinstance(circdef.cz_gate(0, 1), QCircuit)
+    assert isinstance(circdef.cz_gate(1, 2), QCircuit)
+    assert isinstance(circdef.cz_gate(2, 3), QCircuit)
+    assert isinstance(circdef.cz_gate(3, 4), QCircuit)
 
 
 def test_ccx_gate(circdef):
-    circdef.ccx_gate(0, 1, 2)
-    circdef.ccx_gate(1, 2, 3)
-    circdef.ccx_gate(2, 3, 4)
-    assert statevector_qiskit(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                    0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
-
-    assert statevector_cirq(circdef).tolist() == [1+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j,
-                                                  0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j, 0+0j]
+    assert isinstance(circdef.ccx_gate(0, 1, 2), QCircuit)
+    assert isinstance(circdef.ccx_gate(1, 2, 3), QCircuit)
+    assert isinstance(circdef.ccx_gate(2, 3, 4), QCircuit)
 
 
 def test_ry_gate(circdef):
